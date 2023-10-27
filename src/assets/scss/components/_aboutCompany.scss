@@ -1,0 +1,164 @@
+.about-company {
+    @media (max-width: 425px) {
+        padding-bottom: 30px;
+    }
+
+    padding-bottom: 120px;
+
+    .container {
+        @media (max-width: 1199px) {
+            text-align: center;
+            justify-content: center;
+            
+            .about-company-text {
+                text-align: start;
+            }
+        }
+
+        @media (max-width: 1466px) {
+            gap: 50px;
+        }
+
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 200px;
+
+        .left {
+            @media (max-width: 1199px) {
+                display: none;
+            }
+
+            position: relative;
+
+            .textbox {
+                height: 180px;
+                width: 370px;
+                background-color: #BEEBFF;
+                box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.131);
+                position: absolute;
+                bottom: 40px;
+                left: -56px;
+                padding-top: 40px;
+                padding-left: 25px;
+
+                .name {
+                    font-family: DM sans, inter, Arial, Helvetica, sans-serif;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+
+                span {
+                    color: #F94D1C;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .right  {
+            @media (max-width: 1199px) {
+                width: auto;
+            }
+
+            @media (max-width: 834px) {
+                width: auto;
+            }
+
+            width: 500px;
+
+            .textbox {
+                @media (max-width: 767px) {
+                    margin-bottom: 50px;
+                }
+
+                margin-bottom: 116px;
+
+                .head {
+                    color: #F94D1C;
+                    font-size: 18px;
+                }
+
+                h2 {
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    line-height: 2;
+                    color: #5E5E5E;
+                    font-size: 15px;
+
+                    &.first {
+                        margin-bottom: 34px;
+                    }
+                }
+            }
+
+            .buttons {
+                @media (max-width: 1199px) {
+                    justify-content: center;
+                }
+
+                @media (max-width: 429px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                display: flex;
+                gap: 40px;
+
+                .btn-black {
+                    width: 180px;
+                }
+
+                a {
+                    text-decoration: none;
+                }
+
+                .btncontainer {
+                    border: 1px solid transparent;
+                    border-radius: 1000px;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding-right: 18px;
+                    width: 180px;
+                    transition: border 0.15s, background-color 0.15s;
+
+                    &:hover {
+                        border: 1px solid #191919;
+                        background-color: #191919;
+
+                        p {
+                            color: #ffffff;
+                        }
+
+                        .btn-play {
+                            border: none;
+                            color: #ffffff;
+                        }
+                    }
+
+                    &:active {
+                        background-color: #9b9b9b;
+                    }
+
+                    p {
+                        margin: 0px 0px;
+                    }
+
+                    .btn-play{
+                        background-color: transparent;
+                        border: 1px solid #191919;
+                        height: 46px;
+                        width: 46px;
+                        border-radius: 999px;
+
+                        i {
+                            margin-left: 8px;
+                        }
+                    }                        
+                }
+            }
+        }
+    }
+}

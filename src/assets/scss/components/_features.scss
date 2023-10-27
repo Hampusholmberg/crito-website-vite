@@ -1,0 +1,129 @@
+.features {
+    padding-bottom: 120px;
+    display: flex;
+    justify-content: center;
+
+    .wrapper-div {
+        border: 1px solid #D1D1D1;
+        padding: 0px 100px;
+    }
+
+    .container {
+        padding: 85px 0px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-areas:    "a b c"
+                                "a d e";
+        row-gap: 20px;
+
+        .content-big {
+            grid-area: a;
+            height: 416px;
+            width: 465px;
+            margin-right: 50px;
+
+            @media (max-width: 1199px) {
+                width: 100%;
+            }
+
+            p {
+                font-size: 18px;
+                color: #F94D1C;
+            }
+
+            h2 {
+                padding-right: 7px;
+            }
+
+            .learn-more {
+                width: 458px;
+                height: 54px;
+                margin-top: 30px;
+            }
+        }
+
+        .content-small {
+            height: 200px;
+            width: 300px;
+            text-decoration: none;
+
+            img, h3 {
+                padding-top: 30px;
+                padding-left: 30px;
+            }
+
+            p {
+                padding-left: 30px;
+                color: gray;
+            }
+
+            &.top-left {
+                grid-area: b;
+            }
+
+            &.top-right { 
+                grid-area: c;
+                margin-right: 150px;
+            }
+
+            &.bottom-left {
+                grid-area: d;
+            }
+
+            &.bottom-right {
+                grid-area: e;
+                margin-right: 150px;
+            }
+        }
+    }
+
+    @media (max-width: 1199px) {
+        padding-bottom: 0px;
+
+        .wrapper-div {
+            border: none;
+            text-align: center;
+            margin: 0px 0px;
+            padding: 0px 0px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding-top: 0px;
+
+            .content-big {
+                margin-right: 0px;
+                padding-bottom: 10px;
+                height: auto;
+                width: auto;
+
+                .btn-yellow {
+                    width: auto;
+                    padding: 0px 20px;
+                }
+            }
+
+            .content-small {
+                padding: 0px 0px;
+                height: auto;
+
+                img, h3, p {
+                    padding-top: 0px;
+                    padding-left: 0px;
+                }
+
+                img {
+                    margin-bottom: 10px;
+                }
+
+                &.top-right, &.bottom-right {
+                    margin: 0px 0px;
+                    padding: 0px 0px;
+                }
+            }
+        }
+    }
+}

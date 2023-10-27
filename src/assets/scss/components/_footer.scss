@@ -1,0 +1,110 @@
+footer {
+    grid-area: footer;
+    background-color: #0E1021;
+
+    .upper, .lower, .container, p, a, i {
+        color: #B6B6BC;
+        text-decoration: none;
+    }
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .upper {
+        position: relative;
+
+        .background-lines {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 430px;
+
+            @media (max-width: 767px) {
+                justify-content: space-around;
+            }
+
+            .logo-and-text {
+                max-width: 290px;
+
+                @media (max-width: 1199px) {
+                    display: none;
+                }
+
+                img {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .content-box {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                @media (max-width: 767px) {
+                    &.last {
+                            display: none;
+                    }
+                }
+
+                p {
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: white;
+                }
+
+                a {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .lower {
+        border-top: 1px solid #3E404D;
+
+        .container {
+            @media (max-width: 767px) {
+                display: flex;
+                flex-direction: column;
+
+                height: auto;
+                padding: 20px 50px;
+
+                .social-media {
+                    font-size: 25px;
+                }
+            }
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 76px;
+
+            .copyright {
+                font-size: 15px;
+            }
+
+            .social-media {
+                display: flex;
+                gap: 26px;
+
+                i {
+                    color: #ffffff;
+
+                    &:hover {
+                        color: #7e7e7e;
+                    }
+                }
+            }
+        }
+    }
+}

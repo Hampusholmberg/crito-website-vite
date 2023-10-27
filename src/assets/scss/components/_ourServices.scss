@@ -1,0 +1,126 @@
+.our-services { 
+    @media (max-width: 425px) {
+        padding-top: 30px;
+        padding-bottom: 0px;
+    }
+
+    padding-top: 120px;
+    padding-bottom: 48px;
+    background-color: #F0EFE9;
+    padding-bottom: 62px;
+    position: relative;
+
+    .background-lines{
+        @media (max-width: 1199px) {
+            display: none;
+        }
+
+        position: absolute;
+        right: 0px;
+        top: 654px;
+    }
+
+    .container {
+
+        .head {
+            @media (max-width: 1199px) {
+                text-align: center;
+            }
+
+            p {
+                color: #F94D1C;
+            }
+
+            h3 {
+                font-size: 45px;
+                font-weight: 900;
+            }
+
+            padding-bottom: 30px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 30px;
+
+            @media (max-width: 1199px) {
+                grid-template-columns: 1fr 1fr;
+                column-gap: 30px;
+                row-gap: 30px;
+            }
+
+            @media (max-width: 575px) {
+                column-gap: 15px;
+                row-gap: 15px;
+            }
+
+            @media (max-width: 485px) {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                row-gap: 20px;
+            }
+
+            .content-box {
+                @media (max-width: 485px) {
+                    width: 80vw;
+                }
+
+                background-color: white;
+                height: 333px;
+                width: auto;
+                padding: 47px 30px;
+                text-decoration: none;
+                position: relative;
+
+                img {
+                    margin-bottom: 40px;
+                }
+
+                div {
+                    @media (max-width: 767px) {
+                        position: absolute;
+                        bottom: 25px;
+                        right: 25px;
+                    }
+
+                    display: flex;
+                    justify-content: end;
+
+                    .btn-black-round {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+                        background-color: #191919;
+                        color: #FFFFFF;
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 25px;
+                    }
+                }
+
+                &:hover {
+                    background-color: #F9D783;
+                    text-decoration-color: #191919;
+
+                    .btn-black-round {
+                        background-color: white;
+                        color: #191919;
+                    }
+                }
+            }
+        }
+
+        .button {
+            padding: 48px 50px;
+            display: flex;
+            justify-content: center;
+
+            .btn-transparent {
+                height: 54px;
+                width: 220px;
+            }
+        }
+    }
+}

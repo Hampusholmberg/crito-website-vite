@@ -1,0 +1,29 @@
+* {
+    color:#191919;
+    font-family: inter, Arial, Helvetica, sans-serif;
+}
+h1, h2, h3 {
+    font-family: dm sans, Arial, Helvetica, sans-serif;
+    color:#191919;
+}
+h1 {
+    font-size: 80px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 45px;
+    font-weight: 900;
+}
+h3 {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.wrapper-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:    "header"
+                            "main"
+                            "footer";
+}

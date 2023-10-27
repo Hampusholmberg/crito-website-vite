@@ -1,0 +1,83 @@
+.meet-our-team {
+    @media (max-width: 425px) {
+        padding-top: 35px;
+        padding-bottom: 25px;
+    }
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #EDCF86;
+
+    .container {
+
+        .head {
+            @media (max-width: 425px) {
+                padding-bottom: 30px;
+            }
+
+            padding-bottom: 80px;
+
+            p {
+                color: #F94D1C;
+                text-align: center;
+            }
+
+            div {
+                display: flex;
+                justify-content: space-between;
+
+                @media (max-width: 575px) {
+                    text-align: center;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            .btn-yellow {
+                @media (max-width: 575px) {
+                    display: block;                       
+                }
+
+                @media (max-width: 425px) {
+                    margin-top: 25px;
+                }
+
+                border: 1px solid #191919;
+                width: 218px;
+            }
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-items: center;
+            column-gap: 10px;
+
+            @media (max-width: 1199px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content-box {
+
+                img {
+                    @media (max-width: 1399px) {
+                        width: 100%;                            
+                    }
+                }
+
+                .name {
+                    font-family: DM sans;
+                    font-weight: 900;
+                    font-size: 22px;
+                    margin-top: 25px;
+                    margin-bottom: 5px;
+                }
+
+                .job-title {
+                    font-size: 14px;
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+}
