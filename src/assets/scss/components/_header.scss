@@ -145,6 +145,16 @@ header {
             display: flex;
             justify-content: center;
 
+            .background-lines {
+                @media (max-width: 850px) {
+                    display: none;
+                }
+    
+                position: absolute;  
+                left: 0px;
+                bottom: 0px;
+            }
+
             h1 {
                 @media (max-width: 320px) {
                     font-size: 48px;
@@ -152,16 +162,6 @@ header {
 
                 text-align: center;
                 font-size: 56px;
-            }
-
-            .background-lines {
-                @media (max-width: 850px) {
-                    display: none;
-                }
-
-                position: absolute;  
-                left: 0px;
-                bottom: 0px;   
             }
         }
     }

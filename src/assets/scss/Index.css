@@ -834,15 +834,6 @@ header .subpage-header .container {
   display: flex;
   justify-content: center;
 }
-header .subpage-header .container h1 {
-  text-align: center;
-  font-size: 56px;
-}
-@media (max-width: 320px) {
-  header .subpage-header .container h1 {
-    font-size: 48px;
-  }
-}
 header .subpage-header .container .background-lines {
   position: absolute;
   left: 0px;
@@ -851,6 +842,15 @@ header .subpage-header .container .background-lines {
 @media (max-width: 850px) {
   header .subpage-header .container .background-lines {
     display: none;
+  }
+}
+header .subpage-header .container h1 {
+  text-align: center;
+  font-size: 56px;
+}
+@media (max-width: 320px) {
+  header .subpage-header .container h1 {
+    font-size: 48px;
   }
 }
 

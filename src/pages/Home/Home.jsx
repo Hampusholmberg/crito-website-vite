@@ -16,29 +16,25 @@ import WhyChooseUs            from './WhyChooseUs';
 
 const Home = () => {
   return (
-    <>
-        <header>
-            <Header/>
-        </header>
+    <div className='wrapper-grid'>
 
-        <main>
-            <ShowcaseSection/>
-            <Customers/>
-            <Features/>
-            <AboutCompany/>
-            <OurServices/>
-            <WhyChooseUs/>
-            <ProjectAndCaseStudies/>
-            <MeetOurTeam/>
-            <Testimonial/>
-            <ArticleAndNews/>
-            <GetNews/>
-        </main>
+    <Header/>
+    <main>
+      <ShowcaseSection/>
+      <Customers/>
+      <Features/>
+      <AboutCompany/>
+      <OurServices/>
+      <WhyChooseUs/>
+      <ProjectAndCaseStudies/>
+      <MeetOurTeam/>
+      <Testimonial/>
+      <ArticleAndNews/>
+      <GetNews/>
+    </main>
 
-        <footer>
-            <Footer/>
-        </footer>
-    </>
+    <Footer/>
+    </div>
   )
 }
 
