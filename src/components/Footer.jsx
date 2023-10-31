@@ -11,7 +11,9 @@ const Footer = () => {
       <div className="container">
       
         <div className="logo-and-text">
-          <img src={logotype_white} alt="Crito logotype"/>
+          <a href="/">
+            <img src={logotype_white} alt="Crito logotype"/>
+          </a>
 
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati voluptas voluptates! Voluptates laborum nam ratione minus necessitatibus, iure praesentium.</p>
         </div>

@@ -10,7 +10,7 @@ const Header = () => {
     <header>
       <div className="container">
 
-        <a className="logotype" href="index.html">
+        <a className="logotype" href="/">
           <img src={logotype} alt="Crito logotype"/>
         </a>
 

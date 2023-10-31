@@ -1,9 +1,9 @@
 import React from 'react'
-import kristine_palmer from '../../assets/images/Kristine-Palmer.png'
-import mark_aubri from '../../assets/images/Mark-Aubri.png'
-import kimberly_hansen from '../../assets/images/Kimberly-Hansen.png'
-import justin_willoman from '../../assets/images/Justin-Willoman.png'
-import TeamMemberBox from '../../components/TeamMemberBox'
+import kristine_palmer  from '../../assets/images/Kristine-Palmer.png'
+import mark_aubri       from '../../assets/images/Mark-Aubri.png'
+import kimberly_hansen  from '../../assets/images/Kimberly-Hansen.png'
+import justin_willoman  from '../../assets/images/Justin-Willoman.png'
+import TeamMemberBox    from '../../components/TeamMemberBox'
 
 const MeetOurTeam = () => {
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import strategic_planning from '../../assets/images/Strategic-Planning.svg'
-import experience_design from '../../assets/images/Experience-Design.svg'
-import artificial_intelligence from '../../assets/images/Artificial-Intelligence.svg'
-import why_choose_us_image from '../../assets/images/why-choose-us-image.png'
-import WhyChooseUsBox from '../../components/WhyChooseUsBox'
-import process_excellence from '../../assets/images/Process-Excellence.svg'
+import strategic_planning       from '../../assets/images/Strategic-Planning.svg'
+import experience_design        from '../../assets/images/Experience-Design.svg'
+import artificial_intelligence  from '../../assets/images/Artificial-Intelligence.svg'
+import why_choose_us_image      from '../../assets/images/why-choose-us-image.png'
+import WhyChooseUsBox           from '../../components/WhyChooseUsBox'
+import process_excellence       from '../../assets/images/Process-Excellence.svg'
 
 const WhyChooseUs = () => {
 

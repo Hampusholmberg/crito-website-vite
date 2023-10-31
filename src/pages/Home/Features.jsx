@@ -1,9 +1,9 @@
 import React from 'react'
 import handshake_icon from '../../assets/images/handshake-icon.svg'
 import lightbulb_icon from '../../assets/images/lightbulb-Icon.svg'
-import chart_icon from '../../assets/images/chart-icon.svg'
-import gear_icon from '../../assets/images/gear-icon.svg'
-import FeatureBox from '../../components/FeatureBox'
+import chart_icon     from '../../assets/images/chart-icon.svg'
+import gear_icon      from '../../assets/images/gear-icon.svg'
+import FeatureBox     from '../../components/FeatureBox'
 
 const Features = () => {
 

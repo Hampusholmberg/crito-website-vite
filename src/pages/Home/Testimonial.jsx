@@ -1,8 +1,9 @@
 import React from 'react'
-import cassandra_warren2 from '../../assets/images/Cassandra-Warren2.png'
-import amanda_tulling2 from '../../assets/images/Amanda-Tulling2.png'
-import jack_mcDogglas2 from '../../assets/images/Jack-McDogglas2.png'
 import ReviewBox from '../../components/ReviewBox'
+
+import cassandra_warren2  from '../../assets/images/Cassandra-Warren2.png'
+import amanda_tulling2    from '../../assets/images/Amanda-Tulling2.png'
+import jack_mcDogglas2    from '../../assets/images/Jack-McDogglas2.png'
 
 const Testimonial = () => {
 

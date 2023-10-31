@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ArticleBox = ({image, alt, day, month, title, description}) => {
+const ArticleBox = ({image, alt, day, month, title, description, url, category}) => {
   return (
-    <a href="news_details.html">
+    <a href={url}>
       <div className="content-box">
         <div className="img-div">
           <img src={image} alt={alt}/>
@@ -13,7 +13,7 @@ const ArticleBox = ({image, alt, day, month, title, description}) => {
         </div>
 
         <div className="text">
-          <p>Business</p>
+          <p>{category}</p>
           <h3>{title}</h3>
           <p>{description}</p>
         </div>

@@ -1,0 +1,190 @@
+.news-details {
+    @media (max-width: 1199px) {
+        margin-top: 50px;
+        margin-bottom: 20px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    margin-top: 130px;
+    margin-bottom: 60px;
+
+    .head {
+        @media (max-width: 1199px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (max-width: 537px) {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        div {
+            @media (max-width: 537px) {
+                font-size: 10px;
+
+                i {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 417px) {
+                display: none;
+            }
+
+            display: flex;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            p {
+                font-size: 18px;
+            }
+
+            i {
+                color: #F9D783;
+                font-size: 9px;
+            }
+        }
+    }
+
+    .content {
+        @media (max-width: 1199px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .left {
+            max-width: 758px;
+            width: auto;
+
+            img {
+                margin-bottom: 45px;
+                width: 100%;
+            }
+
+            p {
+                font-size: 15px;
+                line-height: 1.7;
+                margin-bottom: 20px;
+                color: #5E5E5E;
+            }
+
+            .quote {
+                margin: 50px 0px 50px 0px;
+                display: flex;
+                gap: 24px;
+
+                p {
+                    font-size: 20px;
+                    color: #191919;
+                }
+
+                i {     
+                    font-size: 35px;
+                }
+            }
+
+            .tags {
+                @media (max-width: 425px) {
+                    justify-content: space-around;
+
+                }
+                    
+                
+                display: flex;
+                justify-content: start;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                a {
+                    background-color: #F3F3F3;
+                    width: auto;
+                    min-width: 100px;
+                    text-decoration: none;
+                    color: #191919;
+                    border-radius: 28px;
+                    padding: 10px 15px 10px 15px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .right {
+            @media (max-width: 1199px) {
+                display: none;
+            }
+
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            form {
+                width: 100%;
+                height: 56px;
+                border-radius: 28px;
+                
+                padding-left: 20px;
+                background-color: #F3F3F3;
+
+                input {
+                    border: none;
+                    background-color: transparent;
+                    height: 100%;
+                    width: 88%;
+                }
+
+            }
+
+            div {
+                border: 1px solid lightgray;
+                padding: 50px 40px 20px 40px;
+
+                a {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 900;
+                    text-decoration: none;
+                    color: #191919;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                span {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 2.5;
+                }
+
+                &.recent-posts {
+
+                    a {
+                        border-bottom: 1px solid lightgray;
+                        padding: 10px 0px 16px 0px;
+                    }
+
+                    .last {
+                        border: none;
+                        padding-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

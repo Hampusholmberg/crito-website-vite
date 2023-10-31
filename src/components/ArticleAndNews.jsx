@@ -4,21 +4,21 @@ import article_news2 from '../assets/images/article-news2.png'
 import article_news3 from '../assets/images/article-news3.png'
 import ArticleBox from './ArticleBox'
 
-const ArticleAndNews = () => {
+const ArticleAndNews = ({className}) => {
 
   const articles = [
-    {image: article_news1, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
+    {category: "Business", url: "/newsDetails", image: article_news1, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
     title: "How To Use Digitalization In The classNameroom", description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero."},
 
-    {image: article_news2, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
+    {category: "Business", url: "/newsDetails", image: article_news2, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
     title: "How To Use Digitalization In The classNameroom", description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero."},
 
-    {image: article_news3, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
+    {category: "Business", url: "/newsDetails", image: article_news3, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
     title: "How To Use Digitalization In The classNameroom", description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero."},
   ]
   
   return (
-    <section className="article-and-news">
+    <section className={className}>
       <div className="container">
         <div className="head">
           <div className="left">
@@ -35,8 +35,8 @@ const ArticleAndNews = () => {
         </div>
         <div className="content-wrapper">
           {articles.map((article, index) => (
-              <ArticleBox key={index} image={article.image} alt={article.alt} day={article.day} 
-              month={article.month} title={article.title} description={article.description} />
+              <ArticleBox key={index} category={article.category} image={article.image} alt={article.alt} day={article.day} 
+              month={article.month} title={article.title} description={article.description} url={article.url}/>
           ))}
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React from 'react'
-import project01 from '../../assets/images/Project01.png'
-import project02 from '../../assets/images/Project02.png'
-import project03 from '../../assets/images/Project03.png'
-import project04 from '../../assets/images/Project04.png'
+import project01    from '../../assets/images/Project01.png'
+import project02    from '../../assets/images/Project02.png'
+import project03    from '../../assets/images/Project03.png'
+import project04    from '../../assets/images/Project04.png'
 import CaseStudyBox from '../../components/CaseStudyBox'
 
 const ProjectAndCaseStudies = () => {

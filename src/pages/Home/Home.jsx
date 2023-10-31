@@ -17,23 +17,21 @@ import WhyChooseUs            from './WhyChooseUs';
 const Home = () => {
   return (
     <div className='wrapper-grid'>
-
-    <Header/>
-    <main>
-      <ShowcaseSection/>
-      <Customers/>
-      <Features/>
-      <AboutCompany/>
-      <OurServices/>
-      <WhyChooseUs/>
-      <ProjectAndCaseStudies/>
-      <MeetOurTeam/>
-      <Testimonial/>
-      <ArticleAndNews/>
-      <GetNews/>
-    </main>
-
-    <Footer/>
+      <Header/>
+      <main>
+        <ShowcaseSection/>
+        <Customers/>
+        <Features/>
+        <AboutCompany/>
+        <OurServices/>
+        <WhyChooseUs/>
+        <ProjectAndCaseStudies/>
+        <MeetOurTeam/>
+        <Testimonial/>
+        <ArticleAndNews className="article-and-news"/> 
+        <GetNews/>
+      </main>
+      <Footer/>
     </div>
   )
 }
