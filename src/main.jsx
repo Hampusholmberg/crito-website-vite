@@ -9,7 +9,6 @@ import News         from './pages/News/News';
 import NotFound     from './pages/Not_Found/NotFound';
 import NewsDetails  from './pages/News_Details/NewsDetails';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
@@ -19,7 +18,7 @@ root.render(
           <Route path='/news' element={<News/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route path="/*" element={<NotFound/>} />
-          <Route path="/newsDetails" element={<NewsDetails/>}/>
+          <Route path="/news/:id" element={<NewsDetails/>} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode> 
