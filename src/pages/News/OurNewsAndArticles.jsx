@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import ArticleBox from '../../components/ArticleBox'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const OurNewsAndArticles = () => {
 
   const [articles, setArticles] = useState([])
 
-  const getArticles = async () => {
-    const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
-
-    if(!result.ok)
-      console.log('error')
-    else
-      setArticles(await result.json())
-  }
-
   useEffect(() => {
+
+    const getArticles = async () => {
+
+      const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
+      setArticles(await result.json())
+    }
+
     getArticles()
   }, [] )
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  } 
 
   return (
     <>
@@ -31,9 +33,13 @@ const OurNewsAndArticles = () => {
           </div>
           <div className="content-wrapper">
             {articles.map((article) => (
-              <Link to={`/news/${article.id}`} key={article.id}>
-                <ArticleBox title={article.title} description={article.content} 
-                category={article.category} image={article.imageUrl}/>
+              <Link onClick={scrollToTop} to={`${article.id}`} key={article.id}>
+                <ArticleBox
+                  title={article.title} 
+                  description={article.content} 
+                  category={article.category} 
+                  image={article.imageUrl}
+                />
               </Link>
             ))}
           </div>

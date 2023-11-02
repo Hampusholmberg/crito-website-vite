@@ -1,22 +1,30 @@
-import React from 'react'
-import article_news1 from '../assets/images/article-news1.png'
-import article_news2 from '../assets/images/article-news2.png'
-import article_news3 from '../assets/images/article-news3.png'
+import React, { useState, useEffect } from 'react'
 import ArticleBox from './ArticleBox'
+import { NavLink } from 'react-router-dom'
 
 const ArticleAndNews = ({className}) => {
 
-  const articles = [
-    {category: "Business", url: "/newsDetails", image: article_news1, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
-    title: "How To Use Digitalization In The classNameroom", description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero."},
+  const [articles, setArticles] = useState([])
+  const [showAllArticles, setShowAllArticles] = useState(false)
 
-    {category: "Business", url: "/newsDetails", image: article_news2, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
-    title: "How To Use Digitalization In The classNameroom", description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero."},
+  useEffect(() => {
 
-    {category: "Business", url: "/newsDetails", image: article_news3, alt: "A picture of a woman sitting in a className room.", day: "25", month: "Mar",  
-    title: "How To Use Digitalization In The classNameroom", description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero."},
-  ]
-  
+    const getArticles = async () => {
+      const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
+      setArticles(await result.json())
+    }
+
+    getArticles()
+  } , [] )
+
+  const displayArticles = () => {
+    setShowAllArticles(true)
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <section className={className}>
       <div className="container">
@@ -34,10 +42,37 @@ const ArticleAndNews = ({className}) => {
           </div>
         </div>
         <div className="content-wrapper">
-          {articles.map((article, index) => (
-              <ArticleBox key={index} category={article.category} image={article.image} alt={article.alt} day={article.day} 
-              month={article.month} title={article.title} description={article.description} url={article.url}/>
-          ))}
+          {showAllArticles 
+            ? (
+              articles.map((article) => (
+                <NavLink to={`/news/${article.id}`} key={article.id} onClick={scrollToTop}>
+                  <ArticleBox
+                    title={article.title}
+                    description={article.content}
+                    category={article.category}
+                    image={article.imageUrl}
+                  />
+                </NavLink>
+              )))
+            : (
+              articles.slice(0, 3).map((article) => (
+                <NavLink to={`/news/${article.id}`} key={article.id} onClick={scrollToTop}>
+                  <ArticleBox
+                    title={article.title}
+                    description={article.content}
+                    category={article.category}
+                    image={article.imageUrl}
+                  />
+                </NavLink>
+              )))
+          }
+          {showAllArticles 
+            ? ("")
+            : (
+              <div className='btn-div'>
+                <button onClick={displayArticles} className='btn-yellow' >Show All</button>
+              </div>)
+          }
         </div>
       </div>
     </section>

@@ -52,7 +52,6 @@
 
         .content-wrapper {
             @media (max-width: 1399px) {
-                flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
             }
@@ -60,10 +59,13 @@
             @media (max-width: 1199px) {
                 flex-direction: column;
                 align-items: center;
+                max-width: 100vw;
             }
 
             display: flex;
+            flex-wrap: wrap;
             gap: 15px;
+            margin-bottom: 25px;
 
             a {
                 text-decoration: none;
@@ -73,28 +75,40 @@
                     text-decoration-color: #191919;
                 }
             }
+            .btn-div {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 25px;
+
+                button {
+                    width: 80%;
+                    max-width: 1000px;
+                }
+            }
+
+            
 
             .content-box {
                 @media (max-width: 1399px) {
                     margin-bottom: 20px;
                 }
 
-                @media (max-width: 1199px) {
-                    width: auto;
-                }
+                max-width: 420px;
 
                 .img-div {
-                    width: auto;
                     position: relative;
 
                     img {
                         width: 100%;
+                        height: 230px;
+                        object-fit: cover;
                     }
 
                     .date {
                         background-color: #F9D783;
                         text-align: center;
-                        width: 56px;
+                        width: 13%;
                         position: absolute;
                         top: 15px;
                         left: 15px;

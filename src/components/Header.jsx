@@ -1,21 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logotype from '../assets/images/Logotype.svg'
 import {NavLink} from 'react-router-dom'
-import Home from '../pages/Home/Home'
-import Contact from '../pages/Contact/Contact'
-
 
 const Header = () => {
+
+  const [isActiveMenu, setIsActiveMenu] = useState(false)
+
+  const toggleMenu = () => {
+
+    if (isActiveMenu) {
+      setIsActiveMenu(false)
+    } else {
+      setIsActiveMenu(true)
+    }
+
+    window.scrollTo(0, 0)
+  }
+
   return (
     <header>
       <div className="container">
-
         <a className="logotype" href="/">
           <img src={logotype} alt="Crito logotype"/>
         </a>
-
         <div className="menu">
-
           <div className="top-menu">
             <div className="contact">       
               <p className="first"><i className="fa-solid fa-phone"></i>+46 (8) 121 470 50</p>
@@ -29,7 +37,6 @@ const Header = () => {
               <a href="https://linkedin.com" target="blank"><i className="fa-brands fa-linkedin"></i></a>
             </div>
           </div>
-
           <div className="bottom-menu">
             <div className="navigation-bar">
               <NavLink to='/'>Home</NavLink>
@@ -41,15 +48,27 @@ const Header = () => {
               Login<i className="fa-solid fa-arrow-up-right-from-square"></i>
             </button>
           </div>
-
         </div>
-
-        <div className="menu-phone">
-          <i className="fa-solid fa-bars"></i>
-        </div>
-
+        <button onClick={toggleMenu} className="menu-phone-toggle">
+          <i className="fa-solid fa-bars"/>
+        </button>
+        {isActiveMenu
+          ? (
+            <div className='menu-phone'> 
+              <button onClick={toggleMenu} className="menu-phone-toggle">
+                <i className="fa-solid fa-bars"/>
+              </button>
+              <div className='navlinks'>
+                <NavLink onClick={toggleMenu} to='/'>Home</NavLink>
+                <NavLink onClick={toggleMenu} to='/ervice'>Service</NavLink>
+                <NavLink onClick={toggleMenu} to='/News'>News</NavLink>
+                <NavLink onClick={toggleMenu} className="last" to='/Contact'>Contact</NavLink>
+              </div>
+            </div>
+          )
+          : ""
+        }
       </div>
-
     </header>
   )
 }
