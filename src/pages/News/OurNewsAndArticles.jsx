@@ -18,10 +18,6 @@ const OurNewsAndArticles = () => {
     getArticles()
   }, [] )
 
-  const scrollToTop = () => {
-    window.scrollTo(0, 0)
-  } 
-
   return (
     <>
       <section className="our-news-and-articles">
@@ -33,7 +29,7 @@ const OurNewsAndArticles = () => {
           </div>
           <div className="content-wrapper">
             {articles.map((article) => (
-              <Link onClick={scrollToTop} to={`${article.id}`} key={article.id}>
+              <Link to={`${article.id}`} key={article.id}>
                 <ArticleBox
                   title={article.title} 
                   description={article.content} 

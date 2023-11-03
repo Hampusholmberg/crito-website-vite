@@ -21,10 +21,6 @@ const ArticleAndNews = ({className}) => {
     setShowAllArticles(true)
   }
 
-  const scrollToTop = () => {
-    window.scrollTo(0, 0)
-  }
-
   return (
     <section className={className}>
       <div className="container">
@@ -45,7 +41,7 @@ const ArticleAndNews = ({className}) => {
           {showAllArticles 
             ? (
               articles.map((article) => (
-                <NavLink to={`/news/${article.id}`} key={article.id} onClick={scrollToTop}>
+                <NavLink to={`/news/${article.id}`} key={article.id}>
                   <ArticleBox
                     title={article.title}
                     description={article.content}
@@ -56,7 +52,7 @@ const ArticleAndNews = ({className}) => {
               )))
             : (
               articles.slice(0, 3).map((article) => (
-                <NavLink to={`/news/${article.id}`} key={article.id} onClick={scrollToTop}>
+                <NavLink to={`/news/${article.id}`} key={article.id}>
                   <ArticleBox
                     title={article.title}
                     description={article.content}

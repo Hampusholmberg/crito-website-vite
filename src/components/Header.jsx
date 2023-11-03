@@ -56,7 +56,7 @@ const Header = () => {
           ? (
             <div className='menu-phone'> 
               <button onClick={toggleMenu} className="menu-phone-toggle">
-                <i className="fa-solid fa-bars"/>
+                <i className="fa-solid fa-xmark"/>
               </button>
               <div className='navlinks'>
                 <NavLink onClick={toggleMenu} to='/'>Home</NavLink>
