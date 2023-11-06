@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import ArticleBox from './ArticleBox'
 import { NavLink } from 'react-router-dom'
+import GetNewsDay from './functions/GetNewsDay'
+import GetNewsMonth from './functions/GetNewsMonth'
+import { useArticles } from '../contexts/ArticleContext'
 
 const ArticleAndNews = ({className}) => {
 
-  const [articles, setArticles] = useState([])
+  const {articles} = useArticles()
   const [showAllArticles, setShowAllArticles] = useState(false)
-
-  useEffect(() => {
-
-    const getArticles = async () => {
-      const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
-      setArticles(await result.json())
-    }
-
-    getArticles()
-  } , [] )
 
   const displayArticles = () => {
     setShowAllArticles(true)
@@ -47,6 +40,8 @@ const ArticleAndNews = ({className}) => {
                     description={article.content}
                     category={article.category}
                     image={article.imageUrl}
+                    day={GetNewsDay(article.published)}
+                    month={GetNewsMonth(article.published)}
                   />
                 </NavLink>
               )))
@@ -58,6 +53,8 @@ const ArticleAndNews = ({className}) => {
                     description={article.content}
                     category={article.category}
                     image={article.imageUrl}
+                    day={GetNewsDay(article.published)}
+                    month={GetNewsMonth(article.published)}
                   />
                 </NavLink>
               )))

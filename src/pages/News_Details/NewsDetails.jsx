@@ -1,36 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useArticles } from '../../contexts/ArticleContext'
 
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import NewsArticle from './NewsArticle'
+import Header         from '../../components/Header'
+import Footer         from '../../components/Footer'
+import NewsArticle    from './NewsArticle'
 import ArticleAndNews from '../../components/ArticleAndNews'
-import ErrorPage from '../Not_Found/ErrorPage'
-
+import ErrorPage      from '../Not_Found/ErrorPage'
 
 const NewsDetails = () => {
-
   const {id} = useParams()
-
-  const [article, setArticle] = useState({})
+  const {article, getArticle} = useArticles()
 
   useEffect(() => {
-
-    const getArticles = async () => {
-
-      const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
-
-      if (result.ok) {
-        const data = await result.json()
-        setArticle(data)
-      }
-      else {
-        setArticle(false)
-      }
-    }
-
-    getArticles()
-  }, [id] )
+    getArticle(id)
+  }, [id])
 
   return (
     <div className='wrapper-grid'>
@@ -43,15 +27,16 @@ const NewsDetails = () => {
             <NewsArticle
               title={article.title}
               content={article.content}
-              author={article.author}
-              published={article.published}
+              published="Datum här"
               category={article.category}
+              author={article.author}
               imageUrl={article.imageUrl}
             />
           ) 
           : (
-        <ErrorPage/>
-          )}
+            <ErrorPage/>
+          )
+        }
         <ArticleAndNews className="article-and-news article-and-news-subpage"/> 
       </main>
       <footer>

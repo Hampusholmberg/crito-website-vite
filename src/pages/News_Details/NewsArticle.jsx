@@ -1,5 +1,4 @@
 import React from 'react'
-import news_details_img from '../../assets/images/news-details.png'
 
 const NewsArticle = ({title, content, author, published, category, imageUrl}) => {
   return (
@@ -10,15 +9,15 @@ const NewsArticle = ({title, content, author, published, category, imageUrl}) =>
         <div className="head">
 
           <h2>{title}</h2>
-  
+
           <div>
-            <p>HÄR SKA STÅ DATUM</p>
+            <p>{published}</p>
             <i className="fa-solid fa-circle"></i>
             <p>{category}</p>
             <i className="fa-solid fa-circle"></i>
             <p>{author}</p>
           </div>
-  
+
         </div>
 
         <div className="content">
@@ -116,9 +115,7 @@ const NewsArticle = ({title, content, author, published, category, imageUrl}) =>
     
           </div>
         </div>
-
       </div>
-
     </section>
   )
 }

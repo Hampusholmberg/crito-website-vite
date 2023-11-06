@@ -1,5 +1,4 @@
 import React from 'react'
-import process_excellence from '../assets/images/Process-Excellence.svg'
 
 const WhyChooseUsBox = ({icon, title, description}) => {
   return (
