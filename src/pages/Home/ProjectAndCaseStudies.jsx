@@ -17,27 +17,27 @@ const ProjectAndCaseStudies = () => {
   return (
     <section className="project-and-case-studies">
 
-    <div className="container">
+      <div className="container">
 
-      <div className="head">
-        <p>Project & Case Studies</p>
-        <h2>Let’s Look At Our Global Projects</h2>
+        <div className="head">
+          <p>Project & Case Studies</p>
+          <h2>Let’s Look At Our Global Projects</h2>
+        </div>
+
+        <div className="content-grid">
+          {caseStudies.map((caseStudy, index) => (
+              <CaseStudyBox key={index} image={caseStudy.image} title={caseStudy.title} 
+                            href={caseStudy.url} alt={caseStudy.imgDescription}/>
+          ))}
+        </div>
+
+        <div className="button">
+          <button className="btn-black">All Recent Projects<i className="fa-solid fa-arrow-up-right-from-square"></i></button>
+        </div>
+
       </div>
 
-      <div className="content-grid">
-        {caseStudies.map((caseStudy, index) => (
-            <CaseStudyBox key={index} image={caseStudy.image} title={caseStudy.title} 
-                          href={caseStudy.url} alt={caseStudy.imgDescription}/>
-        ))}
-      </div>
-
-      <div className="button">
-        <button className="btn-black">All Recent Projects<i className="fa-solid fa-arrow-up-right-from-square"></i></button>
-      </div>
-
-    </div>
-
-  </section>
+    </section>
   )
 }
 

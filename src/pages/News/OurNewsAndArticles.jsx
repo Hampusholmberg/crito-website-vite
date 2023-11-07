@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useContext } from 'react'
 import ArticleBox from '../../components/ArticleBox'
 import { Link } from 'react-router-dom'
 import GetNewsDay from '../../components/functions/GetNewsDay'

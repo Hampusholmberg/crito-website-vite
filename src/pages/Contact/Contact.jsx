@@ -24,7 +24,6 @@ const Contact = () => {
         <Footer/>
       </footer>
     </>
-
   )
 }
 

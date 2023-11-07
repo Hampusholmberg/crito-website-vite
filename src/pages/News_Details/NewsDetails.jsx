@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useArticles } from '../../contexts/ArticleContext'
 
@@ -27,7 +27,7 @@ const NewsDetails = () => {
             <NewsArticle
               title={article.title}
               content={article.content}
-              published="Datum här"
+              published={article.published.slice(0, 10)}
               category={article.category}
               author={article.author}
               imageUrl={article.imageUrl}

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import ArticleBox from './ArticleBox'
+import React, { useState } from 'react'
+import { useArticles } from '../contexts/ArticleContext'
 import { NavLink } from 'react-router-dom'
+import ArticleBox from './ArticleBox'
 import GetNewsDay from './functions/GetNewsDay'
 import GetNewsMonth from './functions/GetNewsMonth'
-import { useArticles } from '../contexts/ArticleContext'
+
 
 const ArticleAndNews = ({className}) => {
 

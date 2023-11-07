@@ -20,24 +20,24 @@ const Testimonial = () => {
 
   return (
     <section className="testimonial">
-    <div className="wrapper">
-      <div className="container">
-        <div className="head">
-          <p>Testimonial</p>
-          <h2>What Our Client Says</h2>
-        </div>
-        <div className="content-wrapper">
-          {reviews.map((review, index) => (
-              <ReviewBox key={index} type={review.type} image={review.image} alt={review.alt} name={review.name} title={review.title} review={review.review}/>
-          ))}
-        </div>
-        <div className="button">
-          <button className="btn-black">All Reviews<i className="fa-solid fa-arrow-up-right-from-square"></i></button>
-        </div>
+      <div className="wrapper">
+        <div className="container">
+          <div className="head">
+            <p>Testimonial</p>
+            <h2>What Our Client Says</h2>
+          </div>
+          <div className="content-wrapper">
+            {reviews.map((review, index) => (
+                <ReviewBox key={index} type={review.type} image={review.image} alt={review.alt} name={review.name} title={review.title} review={review.review}/>
+            ))}
+          </div>
+          <div className="button">
+            <button className="btn-black">All Reviews<i className="fa-solid fa-arrow-up-right-from-square"></i></button>
+          </div>
 
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   )
 }
 

@@ -15,18 +15,18 @@ import ScrollToTop  from './components/functions/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <ArticleProvider>
-          <ScrollToTop/>
-          <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/news' element={<News/>} />
-            <Route path='/contact' element={<Contact/>} />
-            <Route path="/*" element={<NotFound/>} />
-            <Route path="/news/:id" element={<NewsDetails/>} />
-          </Routes>
-        </ArticleProvider>
-      </BrowserRouter>
-    </React.StrictMode> 
+  <React.StrictMode>
+    <BrowserRouter>
+      <ArticleProvider>
+        <ScrollToTop/>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/news' element={<News/>} />
+          <Route path='/contact' element={<Contact/>} />
+          <Route path="/*" element={<NotFound/>} />
+          <Route path="/news/:id" element={<NewsDetails/>} />
+        </Routes>
+      </ArticleProvider>
+    </BrowserRouter>
+  </React.StrictMode> 
 );

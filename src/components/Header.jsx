@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import logotype from '../assets/images/Logotype.svg'
 import {NavLink} from 'react-router-dom'
 

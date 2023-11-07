@@ -1131,6 +1131,11 @@ header .subpage-header .container h1 {
     font-size: 35px;
   }
 }
+.message-us .container .content-box .error {
+  border: 1px solid red;
+  background-color: rgb(255, 233, 233);
+  outline: red;
+}
 .message-us .container .content-box input, .message-us .container .content-box textarea {
   border: none;
   margin-bottom: 16px;
@@ -1138,10 +1143,14 @@ header .subpage-header .container h1 {
   border-radius: 28px;
   padding-left: 20px;
 }
+.message-us .container .content-box input:active, .message-us .container .content-box textarea:active {
+  border: none;
+}
 .message-us .container .content-box input#c-message, .message-us .container .content-box textarea#c-message {
   padding-top: 14px;
   margin-bottom: 44px;
   height: 160px;
+  resize: none;
 }
 
 .news-details {

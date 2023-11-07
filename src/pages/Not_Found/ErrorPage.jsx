@@ -13,9 +13,9 @@ const ErrorPage = () => {
         </h2>
         <i className="fa-solid fa-face-frown"/>
       </div>
-        <button onClick={() => navigate(-1)} className='btn btn-yellow'>
-          Go Back
-        </button>
+      <button onClick={() => navigate(-1)} className='btn btn-yellow'>
+        Go Back
+      </button>
     </section>
   )
 }
