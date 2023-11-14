@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useArticles } from '../../contexts/ArticleContext'
 
@@ -11,9 +11,17 @@ import ErrorPage      from '../Not_Found/ErrorPage'
 const NewsDetails = () => {
   const {id} = useParams()
   const {article, getArticle} = useArticles()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getArticle(id)
+    const fetchData = async () => {
+      try {
+        await getArticle(id)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData()
   }, [id])
 
   return (
@@ -22,7 +30,10 @@ const NewsDetails = () => {
         <Header/>
       </header>
       <main>
-        {article
+        {loading
+          ? (""
+          ) 
+          : article 
           ? (
             <NewsArticle
               title={article.title}
@@ -32,7 +43,7 @@ const NewsDetails = () => {
               author={article.author}
               imageUrl={article.imageUrl}
             />
-          ) 
+          )
           : (
             <ErrorPage/>
           )

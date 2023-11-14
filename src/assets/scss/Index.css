@@ -414,8 +414,16 @@ h3 {
   grid-template-areas: "header" "main" "footer";
 }
 
+header {
+  grid-area: header;
+}
+
 main {
   grid-area: main;
+}
+
+footer {
+  grid-area: footer;
 }
 
 .contact-details {
@@ -562,6 +570,8 @@ main {
   grid-template-columns: auto auto auto;
   grid-template-areas: "a b c" "a d e";
   row-gap: 20px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
 }
 .features .container .content-big {
   grid-area: a;
@@ -1177,6 +1187,9 @@ header .subpage-header .container h1 {
 @media (max-width: 537px) {
   .news-details .head {
     text-align: center;
+  }
+  .news-details .head h2 {
+    font-size: 28px;
   }
 }
 .news-details .head h2 {
