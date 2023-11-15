@@ -1,3 +1,17 @@
+
+
+
+
+// ------------------------------------
+
+// NOT USED ANYMORE, REPLACED BY FORMIK
+
+// ------------------------------------
+
+
+
+
+
 import React, { useState } from 'react'
 import ValidateName     from '../../components/functions/ValidateName'
 import ValidateEmail    from '../../components/functions/ValidateEmail'

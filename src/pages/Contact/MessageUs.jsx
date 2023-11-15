@@ -7,7 +7,6 @@ const MessageUs = () => {
   const onSubmit = async () => {
 
     if (formik.isValid) {
-      console.log("no errors")
       const result = await fetch(apiUrl, {
         method: 'POST', 
         headers: {  
@@ -17,9 +16,9 @@ const MessageUs = () => {
       }) 
       
       if (result.ok) {
-        alert("Message sent")
+        alert(`Thank you ${formik.values.name} for reaching out to us! We will respond within 24 hours. `)
       } else {
-        alert("Error")
+        alert("Ops! Something went wrong and your message could not be sent. Please try again later!")
       }
     }
     formik.resetForm({
