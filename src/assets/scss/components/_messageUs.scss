@@ -1,3 +1,10 @@
+$error-color: #c20909;
+$error-color-background: #fff2f2;
+$success-color: #137c13;
+$success-color-background: #f8fff6;
+
+
+
 .message-us {
     @media (max-width: 425px) {
         padding-bottom: 0px;
@@ -34,9 +41,27 @@
             }
 
             .error {
-                border: 1px solid red;
-                background-color: rgb(255, 233, 233);
-                outline: red;
+                border: 1px solid $error-color;
+                background-color: $error-color-background;
+                outline: $error-color;
+            }
+            .error-label {
+                color: $error-color;
+            }
+
+            .success {
+                border: 1px solid $success-color;
+                background-color: $success-color-background;
+                outline: $success-color;
+            }
+            .success-label {
+                color: $success-color;
+            }
+
+            label {
+                align-self: start;
+                margin-left: 20px;
+                margin-bottom: 10px;
             }
             
             input, textarea { 
@@ -50,7 +75,7 @@
                     border:none;
                 }
 
-                &#c-message {
+                &#message {
                     padding-top: 14px;
                     margin-bottom: 44px;
                     height: 160px;

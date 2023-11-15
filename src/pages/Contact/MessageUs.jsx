@@ -1,101 +1,108 @@
-import React, { useState } from 'react'
-import ValidateName     from '../../components/functions/ValidateName'
-import ValidateEmail    from '../../components/functions/ValidateEmail'
-import ValidateMessage  from '../../components/functions/ValidateMessage'
-
+import {messageSchema}    from '../../schemas/MessageSchema'
+import { useFormik } from 'formik'
 
 const MessageUs = () => {
   const apiUrl = 'https://win23-assignment.azurewebsites.net/api/contactform'
 
-  const [name, setName] = useState("")
-  const [nameError, setNameError] = useState(false)
-  const [email, setEmail] = useState("")
-  const [emailError, setEmailError] = useState(false)
-  const [message, setMessage] = useState("")
-  const [messageError, setMessageError] = useState(false)
+  const onSubmit = async () => {
 
-  const submitForm = async (e) => {
-    e.preventDefault()
-    const messageForm = {name, email, message}
-    let validatedInputs = 0
-
-    ValidateName(name)
-      if (!ValidateName(name)) {
-        setNameError(true)
-        setName("")
-      } else {
-        setNameError(false)
-        validatedInputs++
-      }
-
-    ValidateEmail(email)
-      if (!ValidateEmail(email)) {
-        setEmailError(true)
-        setEmail("")
-      } else {
-        setEmailError(false)
-        validatedInputs++
-      }
-
-    ValidateMessage(message)
-      if (!ValidateMessage(message)) {
-        setMessageError(true)
-        setMessage("")
-      } else {
-        setMessageError(false)
-        validatedInputs++
-      }
-
-    if (validatedInputs === 3) {
-
-      const json = JSON.stringify(messageForm)
-
+    if (formik.isValid) {
+      console.log("no errors")
       const result = await fetch(apiUrl, {
-        method: "POST", 
-        headers: {
+        method: 'POST', 
+        headers: {  
           'content-type': 'application/json'
         },
-        body: json        
-      })
+        body: JSON.stringify(formik.values)
+      }) 
+      
       if (result.ok) {
-        setName(""), setEmail(""), setMessage("")
-        alert("Message has been sent.")
-      } else
-        alert("There was an error, your message has not been sent.")
+        alert("Message sent")
+      } else {
+        alert("Error")
+      }
     }
+    formik.resetForm({
+      values: {
+        name: '',
+        email: '',
+        message: '',
+      }
+    })
   }
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+    validationSchema: messageSchema,
+    onSubmit,
+  })
 
   return (
-    <section className="message-us">
-      <div className="container">
-        <form className="content-box" noValidate onSubmit={submitForm}>
+    <section className='message-us'>
+      <div className='container'>
+        <form className='content-box' noValidate 
+        onSubmit={formik.handleSubmit}>
+
           <h2>Leave us a message<br/>for any information</h2>
-          <input 
-            className={nameError ? 'error' : ''}
-            type="text" 
-            placeholder={nameError ? 'Please enter your name' : 'Name*'}
-            onChange={(e) => {setName(e.target.value)}}
-            value={name}
+
+          <label 
+            htmlFor='name'
+            className={formik.errors.name && formik.touched.name ? 'error-label'
+            :!formik.errors.name && formik.touched.name ? 'success-label': ''}>
+            {formik.errors.name && formik.touched.name ? formik.errors.name : "Name*"}
+          </label>
+          <input
+            id='name'
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            name='name'
+            className={formik.errors.name && formik.touched.name ? 'error'
+            :!formik.errors.name && formik.touched.name ? 'success': ''}
+            type='text' 
             required/>
-          <input 
-            className={emailError ? 'error' : ''}
-            type="email" 
-            placeholder={emailError ? 'Please enter a valid email address' : 'Email*'}
-            onChange={(e) => {setEmail(e.target.value)}}
-            value={email}
+
+          <label 
+            htmlFor='email'
+            className={formik.errors.email && formik.touched.email ? 'error-label'
+            :!formik.errors.email && formik.touched.email ? 'success-label': ''}>
+            {formik.errors.email && formik.touched.email ? formik.errors.email : "Email*"}
+          </label>
+          <input
+            id='email'
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            name='email'
+            className={formik.errors.email && formik.touched.email ? 'error'
+            :!formik.errors.email && formik.touched.email ? 'success' : ''}
+            type='email' 
             required/>
-          <textarea 
-            className={messageError ? 'error' : ''}
-            placeholder={messageError ? 'Please write a message' : 'Your Message*'}
-            id="c-message" 
-            onChange={(e) => {setMessage(e.target.value)}} 
-            value={message}
+
+          <label 
+            htmlFor='message'
+            className={formik.errors.message && formik.touched.message ? 'error-label'
+            :!formik.errors.message && formik.touched.message ? 'success-label': ''}>
+            {formik.errors.message && formik.touched.message ? formik.errors.message : "Your Message*"}
+          </label>
+          <textarea
+            id='message'
+            value={formik.values.message}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            name='message'
+            className={formik.errors.message && formik.touched.message ? 'error'
+            :!formik.errors.message && formik.touched.message ? 'success': ''}
             required>
           </textarea>
+
           <button            
-            className="btn-yellow" 
-            action="submit">
-            Send Message<i className="fa-solid fa-arrow-up-right-from-square"></i>
+            className='btn-yellow' 
+            type='submit'>
+            Send Message<i className='fa-solid fa-arrow-up-right-from-square'></i>
           </button>
         </form>
       </div>

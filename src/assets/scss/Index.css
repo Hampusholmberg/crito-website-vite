@@ -1142,9 +1142,25 @@ header .subpage-header .container h1 {
   }
 }
 .message-us .container .content-box .error {
-  border: 1px solid red;
-  background-color: rgb(255, 233, 233);
-  outline: red;
+  border: 1px solid #c20909;
+  background-color: #fff2f2;
+  outline: #c20909;
+}
+.message-us .container .content-box .error-label {
+  color: #c20909;
+}
+.message-us .container .content-box .success {
+  border: 1px solid #137c13;
+  background-color: #f8fff6;
+  outline: #137c13;
+}
+.message-us .container .content-box .success-label {
+  color: #137c13;
+}
+.message-us .container .content-box label {
+  align-self: start;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 .message-us .container .content-box input, .message-us .container .content-box textarea {
   border: none;
@@ -1156,7 +1172,7 @@ header .subpage-header .container h1 {
 .message-us .container .content-box input:active, .message-us .container .content-box textarea:active {
   border: none;
 }
-.message-us .container .content-box input#c-message, .message-us .container .content-box textarea#c-message {
+.message-us .container .content-box input#message, .message-us .container .content-box textarea#message {
   padding-top: 14px;
   margin-bottom: 44px;
   height: 160px;

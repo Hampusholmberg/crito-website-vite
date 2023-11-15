@@ -1,9 +1,9 @@
 
 const GetNewsMonth = (date) => {
 
-    let temp = date.slice(5, 7)
+    let month = date.slice(5, 7)
 
-    switch (temp) {
+    switch (month) {
         case "01":
         return "Jan"
         case "02":
