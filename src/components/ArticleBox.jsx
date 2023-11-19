@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ArticleBox = ({image, alt, day, month, title, description, url, category}) => {
+const ArticleBox = ({image, alt, day, month, title, description, category}) => {
   return (
     <div className="content-box">
       <div className="img-div">
